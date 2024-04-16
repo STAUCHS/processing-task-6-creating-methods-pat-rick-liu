@@ -18,43 +18,50 @@ public class Sketch extends PApplet {
     surface.setResizable(true);
     noLoop();
     background(199, 213, 228);
+
   }
+
+  Random myRandom = new Random();
+  int intGreenRandom = myRandom.nextInt(255);
 
   // Called repeatedly, anything drawn to the screen goes here
   public void draw() {
 
-    public int randomFlower(){
-      Random myRandom = new Random();
-    int intRedRandom = myRandom.nextInt(255);
-    int intGreenRandom = myRandom.nextInt(255);
-    int intBlueRandom = myRandom.nextInt(255);
-    int intPetalRandom = myRandom.nextInt(100, 150);
-    int intMiddleRandom = myRandom.nextInt(20, 40);
-      drawFlower(intRedRandom, intGreenRandom, intBlueRandom, width / 7, height / 4 * intColumn, intPetalRandom,
-          intMiddleRandom);
-    }
-    // Draws the rows and columns of randomized flowers
     for (int intColumn = 1; intColumn < 4; intColumn++) {
-      Random myRandom = new Random();
-    int intRedRandom = myRandom.nextInt(255);
-    int intGreenRandom = myRandom.nextInt(255);
-    int intBlueRandom = myRandom.nextInt(255);
-    int intPetalRandom = myRandom.nextInt(100, 150);
-    int intMiddleRandom = myRandom.nextInt(20, 40);
+
+      int intRedRandom = myRandom.nextInt(255);
+      int intBlueRandom = myRandom.nextInt(255);
+      int intPetalRandom = myRandom.nextInt(100, 150);
+      int intMiddleRandom = myRandom.nextInt(20, 40);
+      // Draws the rows and columns of randomized flowers
+
       drawFlower(intRedRandom, intGreenRandom, intBlueRandom, width / 7, height / 4 * intColumn, intPetalRandom,
           intMiddleRandom);
 
-    for (int intRow = 1; intRow < 6; intRow++) {
-      Random myRandom2 = new Random();
-    int intRed2Random = myRandom2.nextInt(255);
-    int intGreen2Random = myRandom2.nextInt(255);
-    int intBlue2Random = myRandom2.nextInt(255);
-    int intPetal2Random = myRandom2.nextInt(100, 150);
-    int intMiddle2Random = myRandom2.nextInt(20, 40);
-      drawFlower(intRed2Random, intGreen2Random, intBlue2Random, width/7 + width / 7 * intRow, height / 4 * intColumn, intPetal2Random,
-          intMiddle2Random);
+      for (int intRow = 1; intRow < 6; intRow++) {
+
+        drawFlower(intRedRandom, intGreenRandom, intBlueRandom, width / 7 + width / 7 * intRow, height / 4 * intColumn,
+            intPetalRandom,
+            intMiddleRandom);
+      }
     }
+  }
+
+  public boolean moreGreen(){
+    if(intGreenRandom > 100){
+      return false;
+    }else{
+      return true;
     }
+  }
+
+  if(moreGreen=false)
+
+  {
+    background(20, 250, 20);
+  }else
+  {
+
   }
 
   /**
@@ -83,11 +90,4 @@ public class Sketch extends PApplet {
     ellipse(0, 0, intIncreasePetalsY + intIncreasePetalsY / 8, intIncreasePetalsY + intIncreasePetalsY / 8);
     resetMatrix();
   }
-
-  public boolean idk2(){
-    if (){
-
-    }
-   }
-
 }
