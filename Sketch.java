@@ -24,6 +24,22 @@ public class Sketch extends PApplet {
   Random myRandom = new Random();
   int intGreenRandom = myRandom.nextInt(255);
 
+  // Changes background to green if there isn't enough
+  public boolean moreGreen() {
+    if (intGreenRandom < 200) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  {
+
+    if ((boolean) moreGreen() == false) {
+      background(20, 250, 20);
+    }
+  }
+
   // Called repeatedly, anything drawn to the screen goes here
   public void draw() {
 
@@ -45,23 +61,6 @@ public class Sketch extends PApplet {
             intMiddleRandom);
       }
     }
-  }
-
-  public boolean moreGreen(){
-    if(intGreenRandom > 100){
-      return false;
-    }else{
-      return true;
-    }
-  }
-
-  if(moreGreen=false)
-
-  {
-    background(20, 250, 20);
-  }else
-  {
-
   }
 
   /**
