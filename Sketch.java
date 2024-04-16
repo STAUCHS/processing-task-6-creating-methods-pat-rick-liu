@@ -36,7 +36,7 @@ public class Sketch extends PApplet {
   {
 
     if ((boolean) moreGreen() == false) {
-      background(20, 250, 20);
+      background(20, 150, 20);
     }
   }
 
